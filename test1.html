@@ -82,7 +82,7 @@
             </ul>
         </div>
         <button><ion-icon name="chatbubbles"></ion-icon>bình luận</button>
-        <div class="comment active">
+        <div class="comment">
             <button class="out"><ion-icon name="close-outline"></ion-icon></button>
             <h3>6 hỏi đáp</h3>
             <div class="comment-form">
@@ -572,7 +572,7 @@
                 child.querySelector('.buttons > button:first-child').onclick = function() {
                     element.querySelector('.comment-box > div:first-of-type').removeChild(child)
                 }
-                handleInputComment(child)
+                handleInputRepComment(child, "Hoàng Nguyễn")
             }
         }
     })
@@ -607,6 +607,14 @@
             event.target.classList.toggle('unactive', event.target.innerText.trim())
             element.querySelector('.buttons button:nth-child(2)').classList.toggle('active', event.target.innerText.trim())
             element.querySelector('.buttons').classList.toggle('active', event.target.innerText.trim())
+        }
+    }
+
+    function handleInputRepComment(element, userName) {
+        element.querySelector('.textarea').onkeydown = function(event) {
+            if(event.keyCode == 8 && event.target.innerText.length == userName.length + 2) {
+                event.preventDefault()
+            }
         }
     }
 </script>
