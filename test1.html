@@ -385,29 +385,33 @@
     handleInputComment(document.querySelector('.comment > div.comment-form:first-of-type'))
     window.addEventListener('resize', handleToggleButtonSlider)
     window.addEventListener('click', function(e) {
-        if(document.querySelector('header > ul:first-of-type > li > a.rank-2').contains(e.target))
+        if(document.querySelector('header > ul:first-of-type > li > a.rank-2').contains(e.target)) 
             document.querySelector('header > ul:first-of-type > li > a.rank-2').classList.toggle('active')
-        else
-            document.querySelector('header > ul:first-of-type > li > a.rank-2').classList.remove('active')
-
+        else 
+            if(document.querySelector('.rank-2.active ~ div') && !document.querySelector('.rank-2.active ~ div').contains(e.target))
+                document.querySelector('header > ul:first-of-type > li > a.rank-2').classList.remove('active')
+        
         if(!document.querySelector('.footer .footer-languages > div').contains(e.target))
             document.querySelector('.footer .footer-languages').classList.remove('active')
-        else 
-            document.querySelector('.footer .footer-languages').classList.toggle('active')
+        else
+            if(document.querySelector('.footer .footer-languages > ul li') && !document.querySelector('.footer .footer-languages > ul li').contains(e.target)) 
+                document.querySelector('.footer .footer-languages').classList.toggle('active')
 
         document.querySelectorAll('.comment-box > div:first-of-type > ul:first-of-type > li:first-child').forEach((element) => {
             if(element.contains(e.target))
-                element.classList.toggle('active')
+                element.classList.add('active')
             else
                 element.classList.remove('active')
         })
+        document.querySelectorAll('.comment-box > div:first-of-type > div:first-of-type > div:first-of-type > ion-icon:first-of-type').forEach(element => {
+            if(element.contains(e.target)) 
+                element.classList.toggle('active')
+            else 
+                if(!element.nextElementSibling.contains(e.target))
+                    element.classList.remove('active')
+        })
     })
 
-    document.querySelectorAll('.comment-box > div:first-of-type > div:first-of-type > div:first-of-type ion-icon').forEach(element => {
-        element.onclick = function() {
-            element.classList.toggle('active')
-        }    
-    })
     document.querySelectorAll('.body .row').forEach(row => {
         row.querySelector('.body .row > span:last-of-type').onclick = function(e) {
             const firstCard = row.querySelector('.card:first-of-type')
