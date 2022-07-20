@@ -860,6 +860,64 @@ form > button[type='submit']:hover {
     margin: 0;
 }
 
+.comment-box > div:first-of-type > div:first-of-type > div:first-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.comment-box > div:first-of-type > div:first-of-type > div:first-of-type ion-icon {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #999;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.comment-box > div:first-of-type > div:first-of-type > div:first-of-type ion-icon:hover {
+    color: #333;
+}
+
+.comment-box > div:first-of-type > div:first-of-type > div:first-of-type ion-icon.active ~ ul {
+    display: block;
+}
+
+.comment-box > div:first-of-type > div:first-of-type > div:first-of-type ul {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+    color: #333;
+    list-style: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 0 #00000054;
+    display: none;
+}
+ 
+.comment-box > div:first-of-type > div:first-of-type > div:first-of-type ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    min-width: 150px;
+    cursor: pointer;
+}
+
+.comment-box > div:first-of-type > div:first-of-type > div:first-of-type ul li:hover {
+    background-color: #ccc;
+}
+
+.comment-box > div:first-of-type > div:first-of-type > div:first-of-type ul li ion-icon {
+    color: #333;
+    margin-right: 2px;
+    font-size: 18px;
+}
+
+
 .comment-box > div:first-of-type > div:first-of-type h4 {
     text-transform: capitalize;
     font-size: 16px;
@@ -894,6 +952,14 @@ form > button[type='submit']:hover {
     color: #999;
     font-weight: 300;
     cursor: default;
+}
+
+.comment-box > div:first-of-type > ul:first-of-type > li:nth-child(4) > ul > li ion-icon {
+    margin-right: 2px;
+}
+
+.comment-box > div:first-of-type > ul:first-of-type > li:nth-child(4) > ul > li:hover {
+    background-color: #ccc;
 }
 
 .comment-box > div:first-of-type > ul:first-of-type > li:not(:last-child):after {
