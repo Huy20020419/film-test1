@@ -425,7 +425,6 @@ form > button[type='submit']:hover {
 .card {
     min-width: 250px;
     height: 320px;
-    background-image: url('./asset/bg-film.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
